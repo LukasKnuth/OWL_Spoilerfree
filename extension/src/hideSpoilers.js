@@ -8,7 +8,9 @@ $("div.Wrap").livequery("div#schedule", (element) => {
 }).livequery("div#match-details", (element) => {
 	// Hide results on the match-page
 	$(element).livequery("section.MatchOverview", (overview) => {
-		const scores = $(overview).find("div.TeamScore-score");
+		$(overview).find("span.MatchStatus").text("Obmitted"); // removes any info about OT, etz.
+		const scores = $(overview).find("div.TeamScore");
+		scores.removeClass("TeamScore--winner"); // remove highlighting of the winner-side
 		scores.find("svg").remove(); // remove the crone-icon
 		scores.find("span.TeamScore-scoreValue").text("Ø"); // remove the result-scores
 	}).livequery("section.MatchInfo", (info) => {
