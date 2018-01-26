@@ -18,16 +18,17 @@ $("div.Wrap").livequery("div#schedule", (element) => {
 		if (mapCount) {
 			mapCount.text("Map Count: Obmitted");
 		}
-	}).livequery("div.Tabs", (tabs) => {
-		const nav = $(tabs).find("nav.Tabs-bar");
+	}).livequery("div.Tabs", (mapTabs) => {
+		const nav = $(mapTabs).find("nav.Tabs-bar");
 		// Remove any names of the maps played
-		nav.find("a.Tabs-tab").each((index, tab) => {
+		const tabs = nav.find("a.Tabs-tab");
+		tabs.each((index, tab) => {
 			if (index > 0) {
 				$(tab).text("Map "+(index));
 			}
 		});
 		// Always add a fifth tab so that the map-count is unknown
-		if (nav.length < 6) {
+		if (tabs.length < 6) {
 			nav.append('<a class="Tabs-tab" href="#">Map 5</a>')
 		}
 	}).livequery("section.MatchRecap", (recap) => {
