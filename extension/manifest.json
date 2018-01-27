@@ -1,7 +1,7 @@
 {
 	"name": "OWL Spoilerfree",
 	"description": "Hides any results from OWL matches, making VODs on the official site spoiler-free.",
-	"version": "1",
+	"version": "0.1-beta",
 	"manifest_version": 2,
 	"content_scripts": [
 		{
