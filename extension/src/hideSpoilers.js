@@ -38,10 +38,7 @@ $("div.Wrap").livequery("div#schedule", (element) => {
 		$(recap).find("h1.MatchRecap-title").text((i, oldContent) => {
 			return oldContent + " (Obmitted)";
 		})
-	}).livequery("div:nth-child(5)", (results) => {
-
-		// TODO this doesn't (always?) work!
-
+	}).livequery("div:has(.GameResult)", (results) => {
 		// Remove the match-result below the player
 		$(results).find("div.GameResult div.MatchStatus").text("Obmitted");
 	});
